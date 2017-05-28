@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+gradlew
+.idea/
+app/app-release.apk
+app/src/androidTest/java/com/example/android/careocd/ExampleInstrumentedTest.java
+app/src/test/java/com/example/android/careocd/ExampleUnitTest.java
