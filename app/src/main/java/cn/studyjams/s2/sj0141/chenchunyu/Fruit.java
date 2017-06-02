@@ -1,4 +1,4 @@
-package com.example.android.careocd;
+package cn.studyjams.s2.sj0141.careocd;
 
 /**
  * Created by chunyu on 2017/5/8.

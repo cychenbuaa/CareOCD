@@ -1,5 +1,6 @@
-package com.example.android.careocd;
+package cn.studyjams.s2.sj0141.careocd;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -23,10 +25,10 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Fruit[] fruits = {
-            new Fruit("Apple",R.drawable.image1), new Fruit("Banana",R.drawable.image2),
-            new Fruit("item1",R.drawable.image3), new Fruit("Orange",R.drawable.image4),
-            new Fruit("Orange",R.drawable.image5), new Fruit("Orange",R.drawable.image6),
-            new Fruit("Orange",R.drawable.image7),new Fruit("Orange",R.drawable.image8)
+            new Fruit("item1",R.drawable.image1), new Fruit("item2",R.drawable.image2),
+            new Fruit("item3",R.drawable.image3), new Fruit("item4",R.drawable.image4),
+            new Fruit("item5",R.drawable.image5), new Fruit("item6",R.drawable.image6),
+            new Fruit("item7",R.drawable.image7), new Fruit("item8",R.drawable.image8)
     };
 
     private List<Fruit> fruitList = new ArrayList<>();
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "这真是一个碍事的按钮！", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
             }
         });
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity
         //这里加入显示水果卡片的代码
         initFruits();
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        GridLayoutManager LayoutManager = new GridLayoutManager(this,2);
+        GridLayoutManager LayoutManager = new GridLayoutManager(this,1);  //主界面卡片布局列数
         recyclerView.setLayoutManager(LayoutManager);
         adapter = new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);
@@ -102,6 +104,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            finish();
             return true;
         }
 
@@ -114,14 +117,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+        if (id == R.id.nav_ad_view) {
+            // 转到广告显示页
+            Intent intent = new Intent(MainActivity.this,AdActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
